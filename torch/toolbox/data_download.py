@@ -32,7 +32,7 @@ def download_data(
         # 2. Download the source file
         remote_file_name = Path(source).name
         with open(data_path / remote_file_name, "wb") as f:
-            request = requests.get("")
+            request = requests.get(source)
             print(f'[INFO] Downloading {remote_file_name} from {source}')
             f.write(request.content)
 
