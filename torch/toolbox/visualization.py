@@ -77,3 +77,22 @@ def plot_confusion_matrix(
         ],
         figsize=(10, 7),
     )
+
+
+def plot_training_metrics(results, ax=None, keys=None, title="Training Metrics"):
+    # 1. Initialize a subplot
+    ax = ax or plt.subplot()
+
+    # 2. Identify the keys to plot
+    keys = keys or list(results.keys())
+
+    # 3. Iterate over the keys and plot them.
+    for key in keys:
+        ax.plot(results[key], label=key)
+
+    # 4. Add legend and title
+    ax.legend()
+    ax.set_title(title)
+
+    # 5. Show the plot
+    plt.show()
